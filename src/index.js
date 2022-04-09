@@ -34,12 +34,23 @@ function outOfStockChecker() {
   // simplify parameters into single array
   let idsToCheck;
   if (arguments.length > 1 ) {
-    idsToCheck = [...arguments]
+    idsToCheck = removeDuplicateIds([...arguments])
   } else {
-    idsToCheck = arguments[0]
+    idsToCheck = removeDuplicateIds(arguments[0])
   }
-  console.log(idsToCheck)
 
+    console.log('idsToCheck', idsToCheck)
+
+}
+
+
+/**
+ * Removes any duplicate ids
+ * @param {string[]} idArray
+ * @return {string[]}
+ */
+function removeDuplicateIds(idArray) {
+    return Array.from(new Set(idArray))
 }
 
 module.exports = outOfStockChecker
