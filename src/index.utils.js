@@ -19,6 +19,7 @@ function removeDuplicateIds(idArray) {
  * Checks for invalid ids within an array
  * all Ids should match the format "XXXX-XXXX-XXXX-XXXX" where X is any integer value.
  * @param { string[] } idArray
+ * @return {string[]}
  */
 function getInvalidIds(idArray) {
     return idArray.filter(id => ID_REGEX.exec(id) === null);
