@@ -27,10 +27,19 @@ function stockCheck(id) {
 
 /**
 * Identifies out of stock items
-* @param {...args: string | string[]} productIds - a list of product Ids to verify whether they are in stock
+* @param {...args: string | string[]} ...args  a list of product Ids to verify whether they are in stock
 * @returns {Promise} resolve/reject to out of stock products or error code
 **/
-function outOfStockChecker(productIds) {
+function outOfStockChecker() {
+  // simplify parameters into single array
+  let idsToCheck;
+  if (arguments.length > 1 ) {
+    idsToCheck = [...arguments]
+  } else {
+    idsToCheck = arguments[0]
+  }
+  console.log(idsToCheck)
+
 }
 
 module.exports = outOfStockChecker
